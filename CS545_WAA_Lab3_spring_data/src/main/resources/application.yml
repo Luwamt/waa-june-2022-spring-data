@@ -1,0 +1,33 @@
+spring:
+  datasource:
+#    password: ${SPRINGDATASOURCEPASSWORD:password}
+#    username: ${SPRINGDATASOURCEUSERNAME:root1}
+#    url: ${SPRINGDATASOURCEURL:jdbc:mysql://localhost:3306/data}
+    #jdbc:mysql://localhost:3306/spring_data}
+    #driverClassName: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      maximumPoolSize: 10
+   password: post
+   username: postgres
+   url: jdbc:postgresql://localhost:5432/test
+  jpa:
+    defer-datasource-initialization: true
+    show-sql: false
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        #dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect:  org.hibernate.dialect.PostgreSQLDialect
+  main:
+    banner-mode: off
+  sql:
+    init:
+      mode: always
+
+debug: false
+server:
+  port: 8090
